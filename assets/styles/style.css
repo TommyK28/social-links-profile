@@ -99,7 +99,7 @@
     }
 
     a {
-        font-weight: var(--font-weight__semi-bold);
+        font-weight: var(--font-weight__bold);
         color: var(--color__white);
         text-decoration: none;
     }
