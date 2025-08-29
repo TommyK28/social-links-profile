@@ -1,0 +1,165 @@
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    src: url("../fonts/static/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    src: url("../fonts/static/Inter-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Inter";
+    src: url("../fonts/static/Inter-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Colors */
+    --color__white: hsl(0, 0%, 100%);
+    --color__green: hsl(75, 94%, 57%);
+    --color__gray-900: hsl(0, 0%, 8%);
+    --color__gray-800: hsl(0, 0%, 12%);
+    --color__gray-700: hsl(0, 0%, 20%);
+    --shadow: 8px 8px 0 hsl(0, 0%, 0%);
+
+    /* Font Family */
+    --font-family__primary: "Inter", sans-serif;
+
+    /* Font Sizes */
+    --font-size__title: 24px;
+    --font-size__base: 14px;
+
+    /* Font weights */
+    --font-weight__regular: 400;
+    --font-weight__semi-bold: 600;
+    --font-weight__bold: 700;
+
+    /* Font line height */
+    --line__height__body: 1.5;
+
+    /* Spacing */
+    --space-16: 16px;
+    --space-24: 24px;
+}
+
+@layer typography {
+    h1 {
+        font-family: var(--font-family__primary);
+        font-size: var(--font-size__title);
+        font-weight: var(--font-weight__semi-bold);
+    }
+
+    p {
+        font-family: var(--font-family__primary);
+        font-size: var(--font-size__base);
+        font-weight: var(--font-weight__regular);
+    }
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--color__gray-900);
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        color: var(--color__white);
+        font-family: var(--font-family__primary);
+        font-size: var(--font-size__base);
+        line-height: var(--line__height__body);
+    }
+
+    a {
+        font-weight: var(--font-weight__semi-bold);
+        color: var(--color__white);
+        text-decoration: none;
+    }
+}
+
+@layer profileCard {
+    .profile-card {
+        background-color: var(--color__gray-800);
+        display: grid;
+        gap: var(--space-24);
+        border-radius: 12px;
+        padding: var(--space-24);
+
+        @media (min-width: 460px) {
+            padding: 40px;
+        }
+    }
+
+    .profile-card__info {
+        display: grid;
+        justify-items: center;
+    }
+
+    .profile-card__info img {
+        border-radius: 50%;
+        margin-block-end: var(--space-24);
+    }
+
+    .profile-card__info > h1 {
+        display: block;
+        margin-block-end: 4px;
+    }
+
+    .profile-card__info address {
+        display: block;
+        color: var(--color__green);
+        font-style: normal;
+        margin-block-end: var(--space-24);
+    }
+
+    .profile-card__links {
+        display: grid;
+        gap: var(--space-16);
+
+        @media (min-width: 460px) {
+            min-width: 304px;
+        }
+    }
+
+    .profile-card__links > a {
+        width: 100%;
+        text-align: center;
+        background-color: var(--color__gray-700);
+        padding: 12px 16px;
+        border-radius: 8px;
+        transition: 0.3s ease;
+    }
+
+    .profile-card__links > a:hover {
+        color: var(--color__gray-700);
+        background-color: var(--color__green);
+    }
+}
