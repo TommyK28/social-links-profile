@@ -99,7 +99,7 @@
     }
 
     a {
-        font-weight: var(--font-weight__bold);
+        font-weight: var(--font-weight__semi-bold);
         color: var(--color__white);
         text-decoration: none;
     }
@@ -135,6 +135,7 @@
 
     .profile-card__info address {
         display: block;
+        font-weight: var(--font-weight__bold);
         color: var(--color__green);
         font-style: normal;
         margin-block-end: var(--space-24);
